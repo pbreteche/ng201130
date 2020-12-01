@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CONTACTS } from './fixtures/contacts';
+import { Contact, CONTACTS} from './fixtures/contacts';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,8 @@ export class AppComponent {
   title = 'ng201130';
   contacts = CONTACTS;
   selected = CONTACTS[0];
+
+  select(contact: Contact): void {
+    this.selected = contact;
+  }
 }
