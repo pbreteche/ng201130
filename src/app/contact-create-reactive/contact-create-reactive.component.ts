@@ -16,6 +16,12 @@ export class ContactCreateReactiveComponent {
     email: new FormControl('', [
       Validators.required,
       Validators.email
+    ]),
+    memberSince: new FormControl('', [
+      Validators.required
+    ]),
+    agency: new FormControl('', [
+      Validators.required
     ])
   });
 
@@ -30,5 +36,13 @@ export class ContactCreateReactiveComponent {
 
   get email(): AbstractControl {
     return this.createForm.get('email');
+  }
+
+  get memberSince(): AbstractControl {
+    return this.createForm.get('memberSince');
+  }
+
+  get agency(): AbstractControl {
+    return this.createForm.get('agency');
   }
 }

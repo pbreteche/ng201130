@@ -17,5 +17,26 @@
       <p *ngIf="email.errors.email">Vous devez saisir un email au format valide</p>
     </div>
   </div>
+  <div>
+    <label for="new-contact-member-since">Date d'inscription</label>
+    <input type="date" name="member-since" id="new-contact-member-since"
+           formControlName="memberSince" required>
+    <div class="error" *ngIf="memberSince.invalid && memberSince.touched">
+      <p *ngIf="memberSince.errors.required">Ce champs est obligatoire</p>
+    </div>
+  </div>
+  <div>
+    <label for="new-contact-agency">Agence</label>
+    <select name="agency" id="new-contact-agency"
+            formControlName="agency" required>
+      <option value="" disabled selected>Choisissez une agence</option>
+      <option value="0">Troyes</option>
+      <option value="1">Compiègne</option>
+      <option value="2">Belfort</option>
+    </select>
+    <div class="error" *ngIf="agency.invalid && agency.touched">
+      <p *ngIf="agency.errors.required">Ce champs est obligatoire</p>
+    </div>
+  </div>
   <button [disabled]="createForm.invalid">Ajouter</button>
 </form>
