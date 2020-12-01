@@ -1,6 +1,12 @@
 <h1>{{ title }}</h1>
 
+<nav>
+  <ul>
+    <li *ngFor="let contact of contacts"><a>{{ contact.username }}</a></li>
+  </ul>
+</nav>
+
 <article>
-  <h1>{{ contact.username }}</h1>
-  <p>Adresse courriel&nbsp;: {{ contact.email }}</p>
+  <h1>{{ selected.username }}</h1>
+  <p>Adresse courriel&nbsp;: {{ selected.email }}</p>
 </article>

@@ -8,5 +8,6 @@ import { CONTACTS } from './fixtures/contacts';
 })
 export class AppComponent {
   title = 'ng201130';
-  contact = CONTACTS[0];
+  contacts = CONTACTS;
+  selected = CONTACTS[0];
 }
