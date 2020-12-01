@@ -1,11 +1,5 @@
 <h1>{{ title }}</h1>
 
-<nav>
-  <ul>
-    <li *ngFor="let contact of contacts">
-      <a (click)="select(contact)" [class.active]="contact == selected">{{ contact.username }}</a>
-    </li>
-  </ul>
-</nav>
+<app-contact-nav></app-contact-nav>
 
 <app-contact-detail [contact]="selected"></app-contact-detail>
