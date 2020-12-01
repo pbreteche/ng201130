@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CONTACTS} from '../fixtures/contacts';
 
 @Component({
   selector: 'app-contact-create-reactive',
@@ -11,4 +12,9 @@ export class ContactCreateReactiveComponent {
     username: new FormControl(''),
     email: new FormControl('')
   });
+
+  add(): void {
+    CONTACTS.push(this.createForm.value);
+    this.createForm.reset();
+  }
 }
