@@ -1,4 +1,23 @@
+@import '../_variables.scss';
+
 h1 {
-  background-color: #123;
-  color: #fed;
+  background-color: $brand-color;
+  color: $light-color;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  cursor: pointer;
+  border: 1px solid $brand-color;
+  display: block;
+  text-align: center;
+
+  &:hover {
+    background-color: $brand-color;
+    color: $light-color;
+  }
 }
