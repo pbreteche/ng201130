@@ -2,12 +2,12 @@
   <div>
     <label for="new-contact-username">Nom d'utilisateur</label>
     <input type="text" name="username" id="new-contact-username"
-    [(ngModel)]="newContact.username">
+    [(ngModel)]="newContact.username" required>
   </div>
   <div>
     <label for="new-contact-email">Adresse courriel</label>
     <input type="email" name="email" id="new-contact-email"
-    [(ngModel)]="newContact.email">
+    [(ngModel)]="newContact.email" required>
   </div>
   <button>Ajouter</button>
 </form>
