@@ -1,4 +1,4 @@
-<form (ngSubmit)="add()">
+<form (ngSubmit)="add()" #form="ngForm">
   <div>
     <label for="new-contact-username">Nom d'utilisateur</label>
     <input type="text" name="username" id="new-contact-username"
@@ -9,7 +9,7 @@
     <input type="email" name="email" id="new-contact-email"
     [(ngModel)]="newContact.email" required>
   </div>
-  <button>Ajouter</button>
+  <button [disabled]="form.invalid">Ajouter</button>
 </form>
 <p>
   {{ newContact | json }}
