@@ -1,11 +1,16 @@
 <form>
   <div>
     <label for="new-contact-username">Nom d'utilisateur</label>
-    <input type="text" name="username" id="new-contact-username">
+    <input type="text" name="username" id="new-contact-username"
+    [(ngModel)]="newContact.username">
   </div>
   <div>
     <label for="new-contact-email">Adresse courriel</label>
-    <input type="email" name="email" id="new-contact-email">
+    <input type="email" name="email" id="new-contact-email"
+    [(ngModel)]="newContact.email">
   </div>
   <button>Ajouter</button>
 </form>
+<p>
+  {{ newContact | json }}
+</p>
