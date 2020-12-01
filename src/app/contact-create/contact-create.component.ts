@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contact } from '../fixtures/contacts';
+import {Contact, CONTACTS} from '../fixtures/contacts';
 
 @Component({
   selector: 'app-contact-create',
@@ -8,4 +8,9 @@ import { Contact } from '../fixtures/contacts';
 })
 export class ContactCreateComponent {
   newContact: Contact = { username: '', email: ''};
+
+  add(): void {
+    CONTACTS.push(this.newContact);
+    this.newContact = { username: '', email: ''};
+  }
 }
