@@ -16,8 +16,13 @@ nav a {
   display: block;
   text-align: center;
 
-  &:hover {
+  &.active{
     background-color: $brand-color;
     color: $light-color;
+  }
+
+  &:hover {
+    background-color: lighten($brand-color, 20%);
+    color: darken($light-color, 20%);
   }
 }

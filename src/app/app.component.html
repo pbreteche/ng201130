@@ -3,7 +3,7 @@
 <nav>
   <ul>
     <li *ngFor="let contact of contacts">
-      <a (click)="select(contact)">{{ contact.username }}</a>
+      <a (click)="select(contact)" [class.active]="contact == selected">{{ contact.username }}</a>
     </li>
   </ul>
 </nav>
