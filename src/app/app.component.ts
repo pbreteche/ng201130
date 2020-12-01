@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CONTACTS } from './fixtures/contacts';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng201130';
+  contact = CONTACTS[0];
 }
