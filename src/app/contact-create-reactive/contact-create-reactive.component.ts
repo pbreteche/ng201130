@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CONTACTS} from '../fixtures/contacts';
 
 @Component({
@@ -9,12 +9,26 @@ import {CONTACTS} from '../fixtures/contacts';
 })
 export class ContactCreateReactiveComponent {
   createForm = new FormGroup({
-    username: new FormControl(''),
-    email: new FormControl('')
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ])
   });
 
   add(): void {
     CONTACTS.push(this.createForm.value);
     this.createForm.reset();
+  }
+
+  get username(): AbstractControl {
+    return this.createForm.get('username');
+  }
+
+  get email(): AbstractControl {
+    return this.createForm.get('email');
   }
 }
