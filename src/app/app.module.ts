@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RoutingModule } from './routing/routing.module';
 
 import { AppComponent } from './app.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
@@ -19,7 +20,8 @@ import { ContactCreateReactiveComponent } from './contact-create-reactive/contac
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
