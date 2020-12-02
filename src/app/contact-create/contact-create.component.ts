@@ -7,10 +7,10 @@ import {Contact, CONTACTS} from '../fixtures/contacts';
   styleUrls: ['./contact-create.component.scss']
 })
 export class ContactCreateComponent {
-  newContact: Contact = { username: '', email: ''};
+  newContact: Contact = { id: null, username: '', email: '', memberSince: '', agency: null};
 
   add(): void {
     CONTACTS.push(this.newContact);
-    this.newContact = { username: '', email: ''};
+    this.newContact = { id: null, username: '', email: '', memberSince: '', agency: null};
   }
 }
