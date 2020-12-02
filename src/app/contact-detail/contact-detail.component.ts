@@ -18,7 +18,7 @@ export class ContactDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(map => {
-      this.contact = this.contactList.find(map.get('id'));
+      this.contact = this.contactList.find(+map.get('id'));
     });
   }
 }
