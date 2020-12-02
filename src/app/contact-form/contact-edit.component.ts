@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ContactCreateReactiveComponent} from './contact-create-reactive.component';
 import {CONTACTS} from '../fixtures/contacts';
 import {ActivatedRoute} from '@angular/router';
+import {AbstractContactForm} from './abstract-contact-form';
 
 @Component({
   selector: 'app-contact-edit',
   templateUrl: 'contact-create-reactive.component.html',
   styleUrls: ['contact-create-reactive.component.scss']
 })
-export class ContactEditComponent extends ContactCreateReactiveComponent implements OnInit {
+export class ContactEditComponent extends AbstractContactForm implements OnInit {
   currentId: number;
 
   constructor(private activatedRoute: ActivatedRoute) {
