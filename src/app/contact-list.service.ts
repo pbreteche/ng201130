@@ -10,4 +10,8 @@ export class ContactListService {
   findAll(): Array<Contact> {
     return this.contacts;
   }
+
+  find(id: number): Contact {
+    return this.contacts.find(c => c.id === +id);
+  }
 }
