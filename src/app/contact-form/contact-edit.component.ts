@@ -5,11 +5,12 @@ import {AbstractContactForm} from './abstract-contact-form';
 
 @Component({
   selector: 'app-contact-edit',
-  templateUrl: 'contact-create-reactive.component.html',
-  styleUrls: ['contact-create-reactive.component.scss']
+  templateUrl: 'contact-form.component.html',
+  styleUrls: ['contact-form.component.scss']
 })
 export class ContactEditComponent extends AbstractContactForm implements OnInit {
   currentId: number;
+  submitText = 'Mettre à jour';
 
   constructor(private activatedRoute: ActivatedRoute) {
     super();
@@ -19,17 +20,17 @@ export class ContactEditComponent extends AbstractContactForm implements OnInit 
     this.activatedRoute.paramMap.subscribe(map => {
       this.currentId = +map.get('id');
       const contact = CONTACTS[this.currentId - 1];
-      this.createForm.get('username').setValue(contact.username);
-      this.createForm.get('email').setValue(contact.email);
-      this.createForm.get('memberSince').setValue(contact.memberSince);
-      this.createForm.get('agency').setValue(contact.agency);
+      this.form.get('username').setValue(contact.username);
+      this.form.get('email').setValue(contact.email);
+      this.form.get('memberSince').setValue(contact.memberSince);
+      this.form.get('agency').setValue(contact.agency);
     });
   }
 
-  add(): void {
-    CONTACTS[this.currentId - 1].username = this.createForm.get('username').value;
-    CONTACTS[this.currentId - 1].email = this.createForm.get('email').value;
-    CONTACTS[this.currentId - 1].memberSince = this.createForm.get('memberSince').value;
-    CONTACTS[this.currentId - 1].agency = this.createForm.get('agency').value;
+  save(): void {
+    CONTACTS[this.currentId - 1].username = this.form.get('username').value;
+    CONTACTS[this.currentId - 1].email = this.form.get('email').value;
+    CONTACTS[this.currentId - 1].memberSince = this.form.get('memberSince').value;
+    CONTACTS[this.currentId - 1].agency = this.form.get('agency').value;
   }
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="createForm" (ngSubmit)="add()">
+<form [formGroup]="form" (ngSubmit)="save()">
   <div>
     <label for="new-contact-username">Nom d'utilisateur</label>
     <input type="text" name="username" id="new-contact-username"
@@ -38,5 +38,5 @@
       <p *ngIf="agency.errors.required">Ce champs est obligatoire</p>
     </div>
   </div>
-  <button [disabled]="createForm.invalid">Ajouter</button>
+  <button [disabled]="form.invalid">{{ submitText }}</button>
 </form>
