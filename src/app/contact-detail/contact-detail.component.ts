@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import { Contact } from '../fixtures/contacts';
+import { Component } from '@angular/core';
+import {Contact, CONTACTS} from '../fixtures/contacts';
 
 @Component({
   selector: 'app-contact-detail',
@@ -7,6 +7,5 @@ import { Contact } from '../fixtures/contacts';
   styleUrls: ['./contact-detail.component.scss']
 })
 export class ContactDetailComponent {
-  @Input()
-  contact: Contact;
+  contact: Contact = CONTACTS[0];
 }

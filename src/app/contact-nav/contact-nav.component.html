@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li *ngFor="let contact of contacts">
-      <a (click)="select(contact)" [class.active]="contact == selected">{{ contact.username }}</a>
+      <a [routerLink]="['detail', contact.id]">{{ contact.username }}</a>
     </li>
   </ul>
 </nav>
