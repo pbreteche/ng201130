@@ -6,10 +6,12 @@ import { ContactDetailComponent } from '../contact-detail/contact-detail.compone
 import { ContactEditComponent } from '../contact-form/contact-edit.component';
 
 const routes: Routes = [
-  { path: '', component: ContactNavComponent },
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
+  { path: 'list', component: ContactNavComponent },
   { path: 'nouveau', component: ContactCreateComponent },
   { path: 'detail/:id', component: ContactDetailComponent },
   { path: 'edition/:id', component: ContactEditComponent },
+  { path: '**', component: ContactNavComponent }
 ];
 
 @NgModule({
