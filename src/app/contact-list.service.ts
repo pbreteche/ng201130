@@ -45,6 +45,20 @@ export class ContactListService {
     ).subscribe(() => {
       contact.id = this.nextId++;
       this.contacts.push(contact);
+      this.subject.next(this.contacts);
+    });
+  }
+
+  update(id: number, contact: Contact): void {
+    // does not work without a API server
+    this.http.put('api/contact/' + id, contact).pipe(
+      catchError(error => {
+        console.error('Http error: ' + error.status);
+        return throwError('Http server error');
+      })
+    ).subscribe(() => {
+      this.contacts[id] = contact;
+      this.subject.next(this.contacts);
     });
   }
 }
