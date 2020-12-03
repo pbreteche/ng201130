@@ -1,9 +1,9 @@
-<article *ngIf="contact; else contactNotFound">
-  <h1>{{ contact.username }}</h1>
-  <p>Adresse courriel&nbsp;: {{ contact.email }}</p>
-  <p>Agence&nbsp;: {{ contact.agency }}</p>
-  <p>Membre depuis le&nbsp;: {{ contact.memberSince }}</p>
-  <a [routerLink]="['/edition', contact.id]">Éditer</a>
+<article *ngIf="(contact | async); else contactNotFound">
+  <h1>{{ (contact | async).username }}</h1>
+  <p>Adresse courriel&nbsp;: {{ (contact | async).email }}</p>
+  <p>Agence&nbsp;: {{ (contact | async).agency }}</p>
+  <p>Membre depuis le&nbsp;: {{ (contact | async).memberSince }}</p>
+  <a [routerLink]="['/edition', (contact | async).id]">Éditer</a>
 </article>
 <ng-template #contactNotFound>
   <p>Ce contact n'existe pas. <a routerLink="/">Retour à la liste</a></p>

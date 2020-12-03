@@ -22,19 +22,23 @@ export class ContactEditComponent extends AbstractContactForm implements OnInit 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(map => {
       this.currentId = +map.get('id');
+      /*
       const contact = this.contactList.find(this.currentId);
       this.form.get('username').setValue(contact.username);
       this.form.get('email').setValue(contact.email);
       this.form.get('memberSince').setValue(contact.memberSince);
       this.form.get('agency').setValue(contact.agency);
+       */
     });
   }
 
   save(): void {
+    /*
     const contact = this.contactList.find(this.currentId);
     contact.username = this.form.get('username').value;
     contact.email = this.form.get('email').value;
     contact.memberSince = this.form.get('memberSince').value;
     contact.agency = this.form.get('agency').value;
+     */
   }
 }
