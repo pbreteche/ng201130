@@ -9,6 +9,7 @@ import { ContactCreateComponent } from './contact-form/contact-create.component'
 import { RoutingModule } from './routing/routing.module';
 import { ContactEditComponent } from './contact-form/contact-edit.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SimpleValidatorDirective } from './simple-validator.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactDetailComponent,
     ContactNavComponent,
     ContactCreateComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    SimpleValidatorDirective
   ],
   imports: [
     BrowserModule,
