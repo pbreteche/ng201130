@@ -10,6 +10,7 @@ import { RoutingModule } from './routing/routing.module';
 import { ContactEditComponent } from './contact-form/contact-edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SimpleValidatorDirective } from './simple-validator.directive';
+import { ChoiceValidatorDirective } from './choice-validator.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SimpleValidatorDirective } from './simple-validator.directive';
     ContactNavComponent,
     ContactCreateComponent,
     ContactEditComponent,
-    SimpleValidatorDirective
+    SimpleValidatorDirective,
+    ChoiceValidatorDirective
   ],
   imports: [
     BrowserModule,
