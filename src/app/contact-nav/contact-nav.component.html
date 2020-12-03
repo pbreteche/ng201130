@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <li *ngFor="let contact of contacts">
+    <li *ngFor="let contact of contacts | async">
       <a [routerLink]="['detail', contact.id]">{{ contact.username }}</a>
       <a [routerLink]="['edition', contact.id]">edit</a>
     </li>
