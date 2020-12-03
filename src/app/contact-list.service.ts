@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Contact, NEXT_ID} from './fixtures/contacts';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {BehaviorSubject, Observable, throwError} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,15 @@ export class ContactListService {
   }
 
   insert(contact: Contact): void {
-    contact.id = this.nextId++;
-    this.contacts.push(contact);
+    // does not work without a API server
+    this.http.post('api/contact', contact).pipe(
+      catchError(error => {
+        console.error('Http error: ' + error.status);
+        return throwError('Http server error');
+      })
+    ).subscribe(() => {
+      contact.id = this.nextId++;
+      this.contacts.push(contact);
+    });
   }
 }
