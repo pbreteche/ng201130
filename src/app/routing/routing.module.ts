@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactNavComponent } from '../contact-nav/contact-nav.component';
+import { ContactNavComponent as AdminContactNavComponent } from '../admin/contact-nav/contact-nav.component';
 import { ContactCreateComponent } from '../contact-form/contact-create.component';
 import { ContactDetailComponent } from '../contact-detail/contact-detail.component';
 import { ContactEditComponent } from '../contact-form/contact-edit.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [LoginGuard],
     children: [
+      { path: '', component: AdminContactNavComponent },
       { path: 'nouveau', component: ContactCreateComponent },
       { path: 'edition/:id', component: ContactEditComponent },
     ]

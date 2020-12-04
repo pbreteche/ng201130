@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { ContactNavComponent } from './contact-nav/contact-nav.component';
+import { ContactNavComponent as AdminContactNavComponent } from './admin/contact-nav/contact-nav.component';
 import { ContactCreateComponent } from './contact-form/contact-create.component';
 import { RoutingModule } from './routing/routing.module';
 import { ContactEditComponent } from './contact-form/contact-edit.component';
@@ -21,6 +22,7 @@ import { AdminComponent } from './admin/admin.component';
     AppComponent,
     ContactDetailComponent,
     ContactNavComponent,
+    AdminContactNavComponent,
     ContactCreateComponent,
     ContactEditComponent,
     SimpleValidatorDirective,
