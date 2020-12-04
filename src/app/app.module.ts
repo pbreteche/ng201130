@@ -11,6 +11,8 @@ import { ContactEditComponent } from './contact-form/contact-edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SimpleValidatorDirective } from './simple-validator.directive';
 import { ChoiceValidatorDirective } from './choice-validator.directive';
+import { AgencyPipe } from './agency.pipe';
+import {AGENCIES, AGENCIES_TOKEN} from './agency.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ChoiceValidatorDirective } from './choice-validator.directive';
     ContactCreateComponent,
     ContactEditComponent,
     SimpleValidatorDirective,
-    ChoiceValidatorDirective
+    ChoiceValidatorDirective,
+    AgencyPipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,9 @@ import { ChoiceValidatorDirective } from './choice-validator.directive';
     RoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: AGENCIES_TOKEN, useValue: AGENCIES },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
