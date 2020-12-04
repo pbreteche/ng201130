@@ -5,13 +5,20 @@ import { ContactCreateComponent } from '../contact-form/contact-create.component
 import { ContactDetailComponent } from '../contact-detail/contact-detail.component';
 import { ContactEditComponent } from '../contact-form/contact-edit.component';
 import {LoginGuard} from '../login/login.guard';
+import {AdminComponent} from '../admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'list', component: ContactNavComponent },
-  { path: 'nouveau', component: ContactCreateComponent, canActivate: [LoginGuard] },
   { path: 'detail/:id', component: ContactDetailComponent },
-  { path: 'edition/:id', component: ContactEditComponent },
+  { path: 'admin',
+    component: AdminComponent,
+    canActivate: [LoginGuard],
+    children: [
+      { path: 'nouveau', component: ContactCreateComponent },
+      { path: 'edition/:id', component: ContactEditComponent },
+    ]
+  },
   { path: '**', component: ContactNavComponent }
 ];
 

@@ -14,6 +14,7 @@ import { ChoiceValidatorDirective } from './choice-validator.directive';
 import { AgencyPipe } from './agency.pipe';
 import {AGENCIES, AGENCIES_TOKEN} from './agency.service';
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     SimpleValidatorDirective,
     ChoiceValidatorDirective,
     AgencyPipe,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
