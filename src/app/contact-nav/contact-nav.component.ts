@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contact, CONTACTS } from '../fixtures/contacts';
+import { Contact } from '../fixtures/contacts';
 import { ContactListService } from '../contact-list.service';
 import {Observable} from 'rxjs';
 
@@ -10,13 +10,8 @@ import {Observable} from 'rxjs';
 })
 export class ContactNavComponent {
   contacts: Observable<Contact[]>;
-  selected = CONTACTS[0];
 
   constructor(listService: ContactListService) {
     this.contacts = listService.data;
-  }
-
-  select(contact: Contact): void {
-    this.selected = contact;
   }
 }
