@@ -1,0 +1,10 @@
+<form (ngSubmit)="connect()" *ngIf="!isLoggedIn; else logout">
+  <div>
+    <label for="login-username">Nom d'utilisateur</label>
+    <input name="username" [(ngModel)]="username" id="login-username">
+  </div>
+  <button>Se connecter</button>
+</form>
+<ng-template #logout>
+  <p>{{ this.username }}<a (click)="disconnect()">Se déconnecter</a></p>
+</ng-template>

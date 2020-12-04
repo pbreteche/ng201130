@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
@@ -13,6 +13,7 @@ import { SimpleValidatorDirective } from './simple-validator.directive';
 import { ChoiceValidatorDirective } from './choice-validator.directive';
 import { AgencyPipe } from './agency.pipe';
 import {AGENCIES, AGENCIES_TOKEN} from './agency.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import {AGENCIES, AGENCIES_TOKEN} from './agency.service';
     ContactEditComponent,
     SimpleValidatorDirective,
     ChoiceValidatorDirective,
-    AgencyPipe
+    AgencyPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide: AGENCIES_TOKEN, useValue: AGENCIES },
