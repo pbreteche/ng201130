@@ -27,4 +27,8 @@ export class LoginComponent implements OnInit{
     return this.login.isLoggedIn;
   }
 
+  get loggedUser(): string {
+    return this.login.username;
+  }
+
 }
